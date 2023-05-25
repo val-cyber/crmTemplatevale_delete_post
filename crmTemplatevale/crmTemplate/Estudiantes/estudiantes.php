@@ -73,7 +73,7 @@ $all = $data -> obtainAll();
               <th scope="col">INGLÉS</th>
               <th scope="col">SER</th>
               <th scope="col">ESPECIALIDAD</th>
-              <th scope="col">BORRAR</th>
+              <th scope="col">DETALLE</th>
               
             </tr>
           </thead>
@@ -96,6 +96,7 @@ $all = $data -> obtainAll();
           <td><?php echo $val['especialidad'] ?></td>
           
           <td><a class="btn" href="borrarEstudiantes.php?id=<?= $val['id']?>&req=delete" style="background-color: #D6E8DB ;">Borrar</a></td>
+          <td><a class="btn" href="actualizarEstudiantes.php?id=<?= $val['id']?>" style="background-color: #D6E8DB ;">Editar</a></td>
         </tr>
           <?php } ?>
           </tbody>
