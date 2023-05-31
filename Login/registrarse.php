@@ -5,15 +5,24 @@ if(isset($_POST['registrarse'])){
 
     $registrar= new RegistroUser();
 
-    $registrar-> setIdCamper(1);
+    $registrar-> setIdCamper(4);
     $registrar-> setEmail($_POST['email']);
     $registrar->setUsername($_POST['userName']);
     $registrar->setPassword($_POST['password']);
     
 
-    $registrar-> insertData();
+    /* $registrar-> insertData();
 
-    echo "<script> alert('El usuario fue guardado satisfactoriamente'); document.location='loginRegister.php'</script>";
+    echo "<script> alert('El usuario fue guardado satisfactoriamente'); document.location='loginRegister.php'</script>"; */
+
+    if($registrar->checkUser($_POST['email'])){
+        echo "<script> alert('El usuario ya existe por favor logueate'); document.location='loginRegister.php'</script>"; 
+
+    }else{
+        $registrar-> insertData();
+        echo "<script> alert('usuario registrado Bienvenido!'); document.location='../Home/home.php'</script>"; 
+
+    }
 }
 
 
